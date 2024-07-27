@@ -4,7 +4,7 @@ use syn::{parse_macro_input, DeriveInput, ItemFn};
 
 #[proc_macro_derive(MyMacro)]
 pub fn my_macro_derive(input: TokenStream) -> TokenStream {
-    let DeriveInput { ident, .. } = parse_macro_input!{input};
+    let DeriveInput { ident, .. } = parse_macro_input! {input};
 
     let gen = quote! {
         impl MyTrait for #ident {
